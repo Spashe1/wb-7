@@ -6,13 +6,12 @@ const btnEl = document.getElementById('btn')
 const msgEl = document.getElementById('msgTxt')
 //console.log(msgEl)
 
-btnEl.onclick= onBtnElClick;
-function onBtnElClick(){
-    //console.log('clicked')
-    fetch("https://jsonplaceholder.typicode.com/todos/1")
-    .then(response => response.json())
- .then(data => {
- let message = "Todo info: " + data.title;
- msgEl.innerHTML = message
- })
-}
+btnEl.addEventListener('click', () =>{
+const todoId = toDo.value;
+const url =  `https://jsonplaceholder.typicode.com/todos/${todoId}`;
+fetch(url)
+.then((response) => response.json())
+.then((msg) => {
+    msgEl.innerHTML = msg.title
+})
+})
