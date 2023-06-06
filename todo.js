@@ -12,7 +12,7 @@ function onBtnElClick(){
     fetch("https://jsonplaceholder.typicode.com/todos/1")
     .then(response => response.json())
  .then(data => {
- let message = "User Id: " + data.userId;
+ let message = "Todo info: " + data.title;
  msgEl.innerHTML = message
  })
 }
