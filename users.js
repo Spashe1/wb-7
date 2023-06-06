@@ -6,6 +6,7 @@ const btnEl = document.getElementById('btn')
 btnEl.addEventListener('click',()=>{
      // console.log('clicked')
 const url = `https://jsonplaceholder.typicode.com/users`
+console.log(url)
 fetch(url)
 .then((response) => response.json())
 .then(data => {
@@ -19,7 +20,7 @@ fetch(url)
         let cell6 = row.insertCell(5);
         cell1.innerHTML = data[i].name
         cell2.innerHTML = data[i].email;
-        cell3.innerHTML = data[i].address;
+        cell3.innerHTML = data[i].address.suite;
         cell4.innerHTML = data[i].id;
         cell5.innerHTML = data[i].address.street;
         cell6.innerHTML = data[i].username;
